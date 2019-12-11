@@ -42,7 +42,7 @@ EOF
 
 resource "aws_iam_role_policy" "S3-access" {
   name = "S3-full-access-tf"
-  role = "${aws_iam_role.khaled-role-tf.id}"
+  role = "${aws_iam_role.khaled-role.id}"
   policy = <<EOF
 {
   "Version": "2012-10-17",
