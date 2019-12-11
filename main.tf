@@ -12,14 +12,14 @@ provider "aws" {
 
 
 resource "aws_iam_instance_profile" "khaled-profile" {
-  name = "khaled-profile"
+  name = "khaled-profile-tf"
   role = "${aws_iam_role.khaled-role.name}"
 }
 
 
 
 resource "aws_iam_role" "khaled-role" {
-  name = "khaled-role"
+  name = "khaled-role-tf"
   assume_role_policy = <<EOF
 {
 
@@ -41,8 +41,8 @@ EOF
 #Role_Policy
 
 resource "aws_iam_role_policy" "S3-access" {
-  name = "S3-full-access"
-  role = "${aws_iam_role.khaled-role.id}"
+  name = "S3-full-access-tf"
+  role = "${aws_iam_role.khaled-role-tf.id}"
   policy = <<EOF
 {
   "Version": "2012-10-17",
